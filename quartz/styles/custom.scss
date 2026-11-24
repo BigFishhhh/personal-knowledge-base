@@ -6,49 +6,96 @@ body {
   font-family: inherit;
 }
 
-.center:has(.garden-home) .page-header {
+body:has(.garden-home) {
+  --light: #f4f6fa;
+  --lightgray: #c8d1df;
+  --dark: #18304a;
+  --darkgray: #334963;
+  --secondary: #2d537a;
+  --tertiary: #7f4b29;
+  --garden-underline: #a36337;
+  --garden-serif: Georgia, "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  background: var(--light);
+}
+
+:root[saved-theme="dark"] body:has(.garden-home) {
+  --light: #131d30;
+  --lightgray: #415373;
+  --dark: #e1ebfb;
+  --darkgray: #c4d1e6;
+  --secondary: #b2c8e8;
+  --tertiary: #f2b68f;
+  --garden-underline: #ca8d66;
+}
+
+.page:has(.garden-home) {
+  max-width: 60rem;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+.page:has(.garden-home) #quartz-body {
+  display: block;
+  padding: 0;
+}
+
+.page:has(.garden-home) .sidebar.left {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  height: auto;
+  padding: 0;
+  margin: 1.25rem 0 1rem;
+}
+
+.page:has(.garden-home) .page-title {
+  margin: 0 auto 0 0;
+  font-family: var(--garden-serif);
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+}
+
+.page:has(.garden-home) :is(.sidebar.right, .explorer, .readermode, .page-header) {
   display: none;
 }
 
 .garden-home {
-  max-width: 46rem;
-  margin-block: clamp(1.5rem, 6vw, 5rem) 3rem;
+  margin-block: 0 3rem;
 }
 
-.garden-intro {
-  animation: garden-enter 260ms ease-out both;
+.garden-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3.5;
+  object-fit: cover;
+  margin: 0 0 1.6rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0;
+}
+
+.garden-intro h1,
+.garden-sections h2 {
+  font-family: var(--garden-serif);
 }
 
 .garden-intro h1 {
   margin: 0;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.55rem, 3vw, 2rem);
   line-height: 1.2;
-  letter-spacing: -0.035em;
 }
 
-.garden-intro p {
-  margin: 0.9rem 0 0.4rem;
+.garden-intro p, .garden-intro li {
   color: var(--darkgray);
-  line-height: 1.75;
-}
-
-.garden-intro nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1.1rem;
-}
-
-.garden-intro nav a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
+  line-height: 1.7;
 }
 
 .garden-home a.internal {
   padding: 0;
   background: transparent;
   text-decoration: underline;
-  text-decoration-color: var(--gray);
+  text-decoration-color: var(--garden-underline);
   text-underline-offset: 0.24em;
 }
 
@@ -58,14 +105,10 @@ body {
 
 .garden-sections {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem 2rem;
+  gap: 1.35rem;
   margin-top: 2rem;
-}
-
-.garden-sections section {
   border-top: 1px solid var(--lightgray);
-  padding-top: 1rem;
+  padding-top: 1.25rem;
 }
 
 .garden-sections h2 {
@@ -83,6 +126,7 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  font-family: var(--garden-serif);
 }
 
 .garden-sections li p {
@@ -90,17 +134,4 @@ body {
   color: var(--darkgray);
   font-size: 0.95rem;
   line-height: 1.65;
-}
-
-@keyframes garden-enter {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 600px) {
-  .garden-sections { grid-template-columns: 1fr; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .garden-intro { animation: none; }
 }

@@ -4,14 +4,15 @@ publish: true
 ---
 
 <div class="garden-home">
+<img class="garden-banner" src="./attachments/coastal-garden.jpg" alt="深蓝点阵风格的海岸与山丘" width="1200" height="340">
 <header class="garden-intro">
-<h1>欢迎来逛我的知识库</h1>
+<h1>欢迎来逛</h1>
 <p>这里收录了我的公开笔记，以及一些值得回访的网站。</p>
-<nav aria-label="知识库栏目">
-<a href="./notes/">文章与笔记</a>
-<a href="./bookmarks/">网址收藏</a>
-<a href="./about">关于这里</a>
-</nav>
+<ul>
+<li><a href="./notes/">文章与笔记</a>，记录写作、工具和建站实践。</li>
+<li><a href="./bookmarks/">网址收藏</a>，整理常用资料和工具入口。</li>
+<li><a href="./about">关于这里</a>，介绍这个知识库。</li>
+</ul>
 </header>
 <div class="garden-sections">
 <section aria-labelledby="garden-selected">
