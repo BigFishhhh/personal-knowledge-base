@@ -1,0 +1,68 @@
+@use "./variables.scss" as *;
+
+// put your custom CSS here!
+
+:root[saved-theme="light"] {
+  --light: #f9faf7;
+  --lightgray: #dce4db;
+  --dark: #192c24;
+  --darkgray: #385148;
+  --secondary: #225b43;
+  --tertiary: #42775e;
+}
+
+body {
+  font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.page-title, .article-title, article h1, article h2 {
+  font-family: inherit;
+}
+
+.article-title {
+  letter-spacing: -0.045em;
+}
+
+article:has(.library-grid) > p:first-of-type {
+  font-size: clamp(1.125rem, 2.4vw, 1.4rem);
+  line-height: 1.7;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-block: 2.5rem 3rem;
+}
+
+.library-grid a {
+  display: block;
+  padding: 1.2rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.8rem;
+  color: var(--secondary);
+  font-size: 1.08rem;
+  font-weight: 700;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.library-grid a:is(:hover, :focus-visible) {
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.library-grid span {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--darkgray);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .library-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .library-grid a { transition: none; }
+}
