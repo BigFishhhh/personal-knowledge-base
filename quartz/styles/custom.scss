@@ -1,14 +1,17 @@
-@use "./variables.scss" as *;
+:root {
+  --library-paper: #f7f7f2;
+  --library-ink: #162f29;
+  --library-soft: #50625b;
+  --library-line: #cbd6cc;
+  --library-feature: #e0ebe1;
+}
 
-// put your custom CSS here!
-
-:root[saved-theme="light"] {
-  --light: #f9faf7;
-  --lightgray: #dce4db;
-  --dark: #192c24;
-  --darkgray: #385148;
-  --secondary: #225b43;
-  --tertiary: #42775e;
+:root[saved-theme="dark"] {
+  --library-paper: #1c2421;
+  --library-ink: #e2efe7;
+  --library-soft: #b7c9be;
+  --library-line: #4b6256;
+  --library-feature: #2d4539;
 }
 
 body {
@@ -19,50 +22,92 @@ body {
   font-family: inherit;
 }
 
-.article-title {
-  letter-spacing: -0.045em;
+.center:has(.library-masthead) .page-header {
+  display: none;
 }
 
-article:has(.library-grid) > p:first-of-type {
-  font-size: clamp(1.125rem, 2.4vw, 1.4rem);
-  line-height: 1.7;
+.library-masthead {
+  box-sizing: border-box;
+  padding: clamp(1.75rem, 6vw, 4.25rem) clamp(1.25rem, 5vw, 3.75rem);
+  border-top: 4px solid var(--library-ink);
+  border-bottom: 1px solid var(--library-line);
+  background: var(--library-paper);
+  color: var(--library-ink);
+  animation: library-enter 320ms ease-out both;
 }
 
-.library-grid {
+.library-masthead .library-kicker {
+  margin: 0;
+  color: var(--library-soft);
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+}
+
+.library-masthead h1 {
+  margin: 0.6rem 0;
+  color: var(--library-ink);
+  font-family: "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  line-height: 1.15;
+}
+
+.library-masthead .library-intro {
+  max-width: 30ch;
+  margin: 0;
+  color: var(--library-soft);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+.library-editions {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-block: 2.5rem 3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 1rem 0 3rem;
+  border: 1px solid var(--library-line);
+  background: var(--library-line);
 }
 
-.library-grid a {
-  display: block;
-  padding: 1.2rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 0.8rem;
-  color: var(--secondary);
-  font-size: 1.08rem;
-  font-weight: 700;
-  transition: transform 160ms ease, border-color 160ms ease;
+.library-editions a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 5.25rem;
+  padding: 0.75rem clamp(1rem, 4vw, 2rem);
+  background: var(--library-paper);
+  color: var(--library-ink);
+  text-decoration: none;
+  transition: background-color 160ms ease;
 }
 
-.library-grid a:is(:hover, :focus-visible) {
-  border-color: var(--secondary);
-  transform: translateY(-2px);
+.library-editions .library-feature {
+  grid-column: 1 / -1;
+  min-height: 7.5rem;
+  background: var(--library-feature);
+  font-size: 1.35rem;
 }
 
-.library-grid span {
-  display: block;
-  margin-top: 0.4rem;
-  color: var(--darkgray);
+.library-editions a:is(:hover, :focus-visible) strong {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.library-editions span {
+  margin-top: 0.25rem;
+  color: var(--library-soft);
   font-size: 0.9rem;
   font-weight: 400;
 }
 
-@media (max-width: 700px) {
-  .library-grid { grid-template-columns: 1fr; }
+@keyframes library-enter {
+  from { transform: translateY(6px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .library-editions { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .library-grid a { transition: none; }
+  .library-masthead { animation: none; }
+  .library-editions a { transition: none; }
 }
