@@ -135,3 +135,47 @@ body:has(.garden-home) {
   font-size: 0.95rem;
   line-height: 1.65;
 }
+
+// The reading lists move below the introduction on narrow screens.
+@media (min-width: 1040px) {
+  .page:has(.garden-home) {
+    --garden-index-width: 13rem;
+    --garden-column-gap: 2rem;
+    max-width: 66rem;
+    padding-top: 2rem;
+  }
+
+  .page:has(.garden-home) #quartz-body {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--garden-index-width) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "grid-sidebar-left grid-center"
+      ". grid-footer";
+    column-gap: var(--garden-column-gap);
+    align-items: start;
+  }
+
+  .page:has(.garden-home) .sidebar.left {
+    margin-top: 0;
+    min-width: 0;
+  }
+
+  .page:has(.garden-home) .sidebar.left .page-title {
+    flex-basis: 100%;
+  }
+
+  .garden-sections {
+    position: absolute;
+    inset: 6rem auto auto 0;
+    box-sizing: border-box;
+    width: var(--garden-index-width);
+    margin-top: 0;
+    padding-top: 0.9rem;
+  }
+
+  .garden-home {
+    min-height: 24rem;
+  }
+}
