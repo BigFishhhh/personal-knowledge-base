@@ -12,12 +12,14 @@ configuration:
     - templates
     - .obsidian
   theme:
-    fontOrigin: local
+    fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header:
+        name: DM Serif Display
+        weights: [400]
+      body: Bricolage Grotesque
+      code: JetBrains Mono
     colors:
       lightMode:
         light: "#faf8f8"
@@ -41,6 +43,7 @@ configuration:
         textHighlight: "#b3aa0288"
   links:
     markdownLinkResolution: shortest
+    lazyLoad: true
   contentIndex:
     enableSiteMap: true
     enableRSS: true
@@ -106,7 +109,7 @@ plugins:
   - source: "@quartz-community/favicon"
     enabled: true
   - source: "@quartz-community/og-image"
-    enabled: false
+    enabled: true
   - source: "@quartz-community/cname"
     enabled: false
   - source: "@quartz-community/canvas-page"

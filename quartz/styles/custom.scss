@@ -1,9 +1,9 @@
 body {
-  font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Bricolage Grotesque", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 .page-title, .article-title, article h1, article h2 {
-  font-family: inherit;
+  font-family: "DM Serif Display", "Songti SC", "Noto Serif CJK SC", SimSun, serif;
 }
 
 body:has(.garden-home) {
@@ -14,7 +14,7 @@ body:has(.garden-home) {
   --secondary: #2d537a;
   --tertiary: #7f4b29;
   --garden-underline: #a36337;
-  --garden-serif: Georgia, "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  --garden-serif: "DM Serif Display", "Songti SC", "Noto Serif CJK SC", SimSun, serif;
   background: var(--light);
 }
 
