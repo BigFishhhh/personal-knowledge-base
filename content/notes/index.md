@@ -1,6 +1,6 @@
 ---
-title: 文章与笔记
+title: Writing and Notes
 publish: true
 ---
 
-- [[publishing|写作与发布]]
+- [[publishing|Writing and Publishing]]

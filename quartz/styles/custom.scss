@@ -129,11 +129,11 @@ body:has(.garden-home) {
   font-family: var(--garden-serif);
 }
 
-.garden-sections li p {
-  margin: 0;
-  color: var(--darkgray);
+.garden-more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 0.95rem;
-  line-height: 1.65;
 }
 
 // The reading lists move below the introduction on narrow screens.

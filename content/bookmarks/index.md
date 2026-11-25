@@ -1,10 +1,10 @@
 ---
-title: 网址收藏
-publish: true
+title: Bookmarks
+publish: false
 ---
 
-| 网站 | 分类 | 用途 |
+| Website | Category | What it’s for |
 | --- | --- | --- |
-| [巨潮资讯网](https://www.cninfo.com.cn/) | 财报资料 | 查找 A 股上市公司公告与财报原文 |
-| [Obsidian 帮助](https://obsidian.md/help) | 写作工具 | 查看 Markdown、附件和链接用法 |
-| [Quartz 文档](https://quartz.jzhao.xyz/) | 建站工具 | 查找知识库发布与主题配置说明 |
+| [CNINFO](https://www.cninfo.com.cn/) | Company filings | Find announcements and original financial reports from mainland-listed A-share companies |
+| [Obsidian Help](https://obsidian.md/help) | Writing tools | Learn how to use Markdown, attachments, and links |
+| [Quartz Docs](https://quartz.jzhao.xyz/) | Publishing tools | Learn how to publish and customize a knowledge site |

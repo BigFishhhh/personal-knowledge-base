@@ -1,31 +1,24 @@
 ---
-title: 个人知识库
+title: BigFishhhh
 publish: true
 ---
 
 <div class="garden-home">
-<img class="garden-banner" src="./attachments/coastal-garden.jpg" alt="深蓝点阵风格的海岸与山丘" width="1200" height="340">
+<img class="garden-banner" src="./attachments/coastal-garden.jpg" alt="Coastal hills in a blue halftone print" width="1200" height="340">
 <header class="garden-intro">
-<h1>欢迎来逛</h1>
-<p>这里收录了我的公开笔记，以及一些值得回访的网站。</p>
-<ul>
-<li><a href="./notes/">文章与笔记</a>，记录写作、工具和建站实践。</li>
-<li><a href="./bookmarks/">网址收藏</a>，整理常用资料和工具入口。</li>
-<li><a href="./about">关于这里</a>，介绍这个知识库。</li>
-</ul>
+<h1>Welcome!</h1>
+<p>I’m BigFishhhh. This is where I share what I’ve been writing and learning.</p>
+<p>If you’re new here, start with <a href="./notes/publishing">Writing and Publishing</a>, a short note about this site’s Obsidian and Quartz setup.</p>
 </header>
 <div class="garden-sections">
 <section aria-labelledby="garden-selected">
-<h2 id="garden-selected">精选文章</h2>
-<ul>
-<li><a href="./notes/publishing">写作与发布</a><p>用 Obsidian 写笔记，再用 Quartz 发布到网站。</p></li>
-</ul>
+<h2 id="garden-selected">Selected Writing</h2>
+<ul><li><a href="./notes/publishing">Writing and Publishing</a></li></ul>
+<a class="garden-more" href="./notes/">All writing</a>
 </section>
 <section aria-labelledby="garden-recent">
-<h2 id="garden-recent">最近笔记</h2>
-<ul>
-<li><a href="./bookmarks/">网址收藏</a><p>财报原文、笔记写作和网站发布的常用入口。</p></li>
-</ul>
+<h2 id="garden-recent">Recent Notes</h2>
+<ul><li><a href="./notes/publishing">Writing and Publishing</a></li></ul>
 </section>
 </div>
 </div>

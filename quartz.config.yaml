@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: 个人知识库
+  pageTitle: BigFishhhh
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   prefetch: viewport
-  locale: zh-CN
+  locale: en-US
   publishAssets: referenced
   ignorePatterns:
     - "**/private/**"
