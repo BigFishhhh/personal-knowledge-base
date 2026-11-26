@@ -192,3 +192,97 @@ body:has(.garden-home) {
   font-size: clamp(1.65rem, 3vw, 2.1rem);
   font-weight: 400;
 }
+
+/* Reading pages use the same paper and ink palette as the garden. */
+body {
+  --light: #f1edde;
+  --lightgray: #ddd5c1;
+  --gray: #726750;
+  --darkgray: #34466b;
+  --dark: #1b2c4e;
+  --secondary: #32577d;
+  --tertiary: #a94026;
+  --highlight: #eedcc9;
+}
+
+:root[saved-theme="dark"] body {
+  --light: #131d30;
+  --lightgray: #415373;
+  --gray: #a4b6d1;
+  --darkgray: #c4d1e6;
+  --dark: #e1ebfb;
+  --secondary: #b2c8e8;
+  --tertiary: #ef9e76;
+  --highlight: #40313a;
+}
+
+.sidebar.left .page-title {
+  font-family: "DM Serif Display", Georgia, serif;
+}
+
+.sidebar.left :is(.explorer, .readermode) {
+  display: none;
+}
+
+.page-header :is(.breadcrumb-container, .breadcrumbs, [data-quartz-plugin="note-properties"]) {
+  display: none;
+}
+
+.page-header .article-title {
+  margin-bottom: 0.15rem;
+  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  line-height: 1.12;
+  font-weight: 400;
+}
+
+.page-header .content-meta {
+  margin-top: 0;
+  font-family: "Caveat", cursive;
+  font-size: 1.15rem;
+}
+
+article:not(:has(.garden-home)) p {
+  line-height: 1.65;
+}
+
+.search > .search-button {
+  justify-content: center;
+  width: 36px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+}
+
+.search > .search-button > p {
+  display: none;
+}
+
+.search > .search-button svg {
+  width: 15px;
+  min-width: 15px;
+  margin: 0;
+}
+
+.search > .search-container {
+  backdrop-filter: none;
+}
+
+.search > .search-container > .search-space > :is(input, .search-layout) {
+  border: 1px solid var(--darkgray);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 800px) {
+  #quartz-body .sidebar.left {
+    gap: 0.4rem;
+  }
+
+  .sidebar.left .page-title {
+    margin-right: auto;
+  }
+
+  .sidebar.left .search {
+    flex-grow: 0;
+  }
+}
