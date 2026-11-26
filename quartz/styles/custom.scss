@@ -1,9 +1,19 @@
+@font-face {
+  font-family: "Garden Kai";
+  src: url("./static/fonts/garden-kai.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
 body {
-  font-family: "Bricolage Grotesque", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --garden-cjk: "Garden Kai", "PingFang SC", "Microsoft YaHei";
+  font-family: "Bricolage Grotesque", var(--garden-cjk), sans-serif;
 }
 
 .page-title, .article-title, article h1, article h2 {
-  font-family: "DM Serif Display", "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  font-family: "DM Serif Display", var(--garden-cjk), serif;
 }
 
 body:has(.garden-home) {
@@ -14,7 +24,7 @@ body:has(.garden-home) {
   --secondary: #2d537a;
   --tertiary: #7f4b29;
   --garden-underline: #a36337;
-  --garden-serif: "DM Serif Display", "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  --garden-serif: "DM Serif Display", var(--garden-cjk), serif;
   background: var(--light);
 }
 
@@ -188,7 +198,7 @@ body:has(.garden-home) {
 }
 
 .garden-intro h1 {
-  font-family: "Caveat", cursive;
+  font-family: "Caveat", var(--garden-cjk), cursive;
   font-size: clamp(1.65rem, 3vw, 2.1rem);
   font-weight: 400;
 }
@@ -217,7 +227,7 @@ body {
 }
 
 .sidebar.left .page-title {
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: "DM Serif Display", var(--garden-cjk), Georgia, serif;
 }
 
 .sidebar.left :is(.explorer, .readermode) {
@@ -237,7 +247,7 @@ body {
 
 .page-header .content-meta {
   margin-top: 0;
-  font-family: "Caveat", cursive;
+  font-family: "Caveat", var(--garden-cjk), cursive;
   font-size: 1.15rem;
 }
 
@@ -271,6 +281,10 @@ article:not(:has(.garden-home)) p {
   border: 1px solid var(--darkgray);
   border-radius: 0;
   box-shadow: none;
+}
+
+.search-bar:lang(zh-CN) {
+  font-family: inherit;
 }
 
 @media (max-width: 800px) {
