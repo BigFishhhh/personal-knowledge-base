@@ -179,3 +179,16 @@ body:has(.garden-home) {
     min-height: 24rem;
   }
 }
+
+@font-face {
+  font-family: "Caveat";
+  src: url("./static/fonts/caveat.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+.garden-intro h1 {
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.65rem, 3vw, 2.1rem);
+  font-weight: 400;
+}
