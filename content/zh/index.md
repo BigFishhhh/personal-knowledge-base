@@ -19,7 +19,7 @@ lang: zh-CN
 </section>
 <section aria-labelledby="garden-recent">
 <h2 id="garden-recent">最近笔记</h2>
-<ul><li><a href="./zh/notes/publishing">写作与发布</a></li></ul>
+<ul><li><a href="./zh/notes/building-this-site">从资料导航到双语个人站</a></li><li><a href="./zh/notes/publishing">写作与发布</a></li></ul>
 </section>
 </div>
 </div>

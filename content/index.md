@@ -18,7 +18,7 @@ publish: true
 </section>
 <section aria-labelledby="garden-recent">
 <h2 id="garden-recent">Recent Notes</h2>
-<ul><li><a href="./notes/publishing">Writing and Publishing</a></li></ul>
+<ul><li><a href="./notes/building-this-site">From a Link Directory to a Bilingual Site</a></li><li><a href="./notes/publishing">Writing and Publishing</a></li></ul>
 </section>
 </div>
 </div>
