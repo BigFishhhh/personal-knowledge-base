@@ -96,8 +96,9 @@ export function pageResources(
   // static/contentIndex.json is emitted by the content-index plugin, which may be disabled.
   // Resolve to an empty index instead of rejecting so consumers (search, explorer, graph, …)
   // degrade gracefully rather than throwing uncaught errors on every page.
+  // Revalidate the stable URL so a browser with an older index can find newly published pages.
   const contentIndexScript =
-    `const fetchData = fetch("${contentIndexPath}")` +
+    `const fetchData = fetch("${contentIndexPath}", { cache: "no-cache" })` +
     `.then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json() })` +
     `.catch(e => { console.warn("[Quartz] Could not load ${contentIndexPath} (" + e.message + "); is configuration.contentIndex disabled?"); return {} });` +
     // Absolute URL of static/ (plugin assets live in static/plugins/<to>). Resolved once on the
