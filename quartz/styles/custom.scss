@@ -56,7 +56,7 @@ body:has(.garden-home) {
   font-size: clamp(1.35rem, 3vw, 1.8rem);
 }
 
-.page:has(.garden-home) :is(.sidebar.right, .explorer, .readermode, .page-header) {
+.page:has(.garden-home) :is(.sidebar.right, .explorer, .readermode, .page-header, .page-listing) {
   display: none;
 }
 
@@ -285,4 +285,24 @@ article:not(:has(.garden-home)) p {
   .sidebar.left .search {
     flex-grow: 0;
   }
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--secondary);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.language-switch[lang="zh-CN"] {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
 }

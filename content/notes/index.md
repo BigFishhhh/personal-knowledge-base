@@ -3,4 +3,4 @@ title: Writing and Notes
 publish: true
 ---
 
-- [[publishing|Writing and Publishing]]
+- [Writing and Publishing](./notes/publishing)

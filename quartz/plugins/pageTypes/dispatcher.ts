@@ -7,6 +7,7 @@ import {
 import { QuartzComponent, QuartzComponentProps } from "../../components/types"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
+import { TRANSLATIONS, ValidLocale } from "../../i18n"
 import {
   FilePath,
   FullSlug,
@@ -121,7 +122,12 @@ async function emitPage(
   resources: StaticResources,
   treeTransforms?: PageTreeTransforms,
 ) {
-  const cfg = ctx.cfg.configuration
+  const siteConfig = ctx.cfg.configuration
+  const lang = fileData.frontmatter?.lang
+  const cfg =
+    lang && Object.hasOwn(TRANSLATIONS, lang)
+      ? { ...siteConfig, locale: lang as ValidLocale }
+      : siteConfig
   // For the 404 page, use an absolute base path so assets resolve correctly
   // when the hosting provider serves 404.html from any URL depth.
   // During local dev (--serve), the dev server strips baseDir itself and
